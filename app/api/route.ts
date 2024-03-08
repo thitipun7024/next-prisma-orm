@@ -9,12 +9,14 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const { id, title, content } = await req.json()
+    const { user, password, name, email, updatedate, status } = await req.json()
     const newPost = await prisma.thitipun.create({
       data: {
-        id,
-        title,
-        content,
+        user,
+        password,
+        name,
+        email,
+        status
       },
     })
     return NextResponse.json(newPost)

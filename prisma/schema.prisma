@@ -21,8 +21,11 @@ model Post {
 }
 
 model thitipun {
-  id        Int      @id @default(autoincrement())
-  title     String
-  content   String?
-  createdAt DateTime @default(now())
+  id            Int      @id @default(autoincrement())
+  user          String?
+  password      String?
+  name          String?
+  email         String?
+  creatdate     DateTime @default(now())
+  status        Int @default(1)
 }
